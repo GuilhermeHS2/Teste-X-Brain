@@ -1,7 +1,10 @@
+package src.application;
+
 import java.util.Date;
-public class ServicoVenda {
-    public  Venda gerarVenda(Date data, double valor, int vendedorId,String vendedorNome){
-        Venda venda = new Venda();
+
+public class servicoVenda {
+    public venda gerarVenda(Date data, double valor, int vendedorId, String vendedorNome){
+        venda venda = new venda();
         venda.setId(1);
         venda.setData(data);
         venda.setValor(valor);
