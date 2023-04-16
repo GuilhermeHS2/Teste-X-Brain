@@ -50,7 +50,7 @@ public class venda {
     }
     public double getTotalVendas(){
         double total = 0;
-        for (src.application.venda venda : vendas){
+        for (venda venda : vendas){
             total += venda.getValor();
         }
         return total;
