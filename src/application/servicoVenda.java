@@ -5,21 +5,34 @@ import java.util.Date;
 
 public class servicoVenda {
     public venda gerarVenda(List<venda> vendas, Date data, double valor, int vendedorId, String vendedorNome){
-        venda venda = new venda();
-        venda.setId(1);
-        venda.setData(data);
-        venda.setValor(valor);
-        venda.setVendedorId(vendedorId);
-        venda.setVendedorNome(vendedorNome);
-
-
         for (venda v : vendas ){
-            if (v.getId() == vendedorId){
-               v = venda;
-               break;
+            if (v.getVendedorId() == vendedorId){
+                v.setData(data);
+                v.setValor(valor);
+                v.setVendedorNome(vendedorNome);
+                return v;
             }
         }
-        return venda;
+
+        venda novaVenda = new venda();
+        novaVenda.setId(vendas.size() + 1);
+        novaVenda.setData(data);
+        novaVenda.setValor(valor);
+        novaVenda.setVendedorId(vendedorId);
+        novaVenda.setVendedorNome(vendedorNome);
+        vendas.add(novaVenda);
+        return novaVenda;
+    }
+
+
+    public venda vendidos(double total){
+        venda venda = new venda();
+        venda.setTotalVendas(total);
+
+
+    return venda;
+
+
     }
 }
 

@@ -11,6 +11,7 @@ public class venda {
     private int vendedorId;
     private String vendedorNome;
     private List<venda> vendas = new ArrayList<>();
+    private double totalVendas;
 
     public int getId(){
         return id;
@@ -21,43 +22,52 @@ public class venda {
     public Date getData(){
         return data;
     }
-    public void setData(Date data){
+    public  void setData(Date data){
         this.data = data;
     }
     public double getValor(){
         return valor;
     }
-    public void setValor(double valor) {
+    public  void setValor(double valor) {
         this.valor = valor;
     }
     public int getVendedorId(){
         return vendedorId;
     }
-    public void setVendedorId(int vendedorId){
+    public  void setVendedorId(int vendedorId){
         this.vendedorId = vendedorId;
     }
     public String getVendedorNome(){
         return vendedorNome;
     }
-    public void setVendedorNome(String vendedorNome){
+    public  void setVendedorNome(String vendedorNome){
         this.vendedorNome = vendedorNome;
     }
     public List<venda> getVendas(){
         return vendas;
+    }
+    public  void setVendas(List<venda> vendas) {
+        this.vendas = vendas;
     }
     public void addVenda(venda venda){
         vendas.add(venda);
     }
     public double getTotalVendas(){
         double total = 0;
-        for (venda venda : vendas){
+        for (src.application.venda venda : vendas){
             total += venda.getValor();
         }
         return total;
     }
+    public void setTotalVendas(double total) {
+        this.totalVendas = total;
+    }
+
     public double getMediaVendasDiarias(Date inicio, Date fim){
         double totalDias = ((fim.getTime()- inicio.getTime())/(1000 * 60 * 60 * 24)) +1;
         return getTotalVendas() / totalDias;
     }
+
+
 }
 
