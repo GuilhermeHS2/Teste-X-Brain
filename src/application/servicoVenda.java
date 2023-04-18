@@ -24,7 +24,7 @@ public class servicoVenda {
         return novaVenda;
     }
 
-
+//novo metado de venda
     public venda vendidos(double total){
         venda venda = new venda();
         venda.setTotalVendas(total);

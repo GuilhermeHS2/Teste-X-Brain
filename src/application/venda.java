@@ -62,7 +62,7 @@ public class venda {
     public void setTotalVendas(double total) {
         this.totalVendas = total;
     }
-
+//novo void total
     public double getMediaVendasDiarias(Date inicio, Date fim){
         double totalDias = ((fim.getTime()- inicio.getTime())/(1000 * 60 * 60 * 24)) +1;
         return getTotalVendas() / totalDias;

@@ -10,6 +10,7 @@ public class principal {
         double total = 0;
         Scanner i = new Scanner(System.in);
         int j = 1;
+        //loop em while
         while(j == 1) {
             System.out.println("Para terminar a venda digite 2 para continuar digite 1:  ");
             j = i.nextInt();
